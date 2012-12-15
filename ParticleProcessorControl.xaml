@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="KinectRecorder.ParticleProcessorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="310" d:DesignWidth="664">
+<Grid Width="651" Height="300">
+        <Image Name="colorImage" Height="240" HorizontalAlignment="Left" Margin="12,12,0,0" Stretch="Fill" VerticalAlignment="Top" Width="300" />
+        <Image Name="depthImage" Height="240" HorizontalAlignment="Left" Margin="318,12,0,0" Stretch="Fill" VerticalAlignment="Top" Width="320" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="77,268,0,0" Name="tapeName" VerticalAlignment="Top" Width="73" Text="default.clip" />
+        <Label Content="Clip Name:" Height="28" HorizontalAlignment="Left" Margin="6,266,0,0" Name="label1" VerticalAlignment="Top" Width="73" />
+        <Label Content="Frames:" Height="28" HorizontalAlignment="Left" Margin="201,266,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Text="0" Height="23" HorizontalAlignment="Left" Margin="252,268,0,0" Name="framesTextBox" VerticalAlignment="Top" Width="60" IsReadOnly="False" />
+        <Canvas Height="240" HorizontalAlignment="Left" Margin="318,12,0,0" Name="skeletonCanvas" VerticalAlignment="Top" Width="320" Background="#00000000" />
+        <Button Content="Open Clip" Height="23" HorizontalAlignment="Left" Margin="318,267,0,0" Name="openButton" VerticalAlignment="Top" Width="75" Click="openButton_Click_1" />
+        <Button Content="nCache..." Height="23" HorizontalAlignment="Left" Margin="399,267,0,0" Name="saveButton" VerticalAlignment="Top" Width="75" Click="saveButton_Click_1" />
+        <Button Content="Process" Height="23" HorizontalAlignment="Left" Margin="480,267,0,0" Name="processButton" VerticalAlignment="Top" Width="75" Click="processButton_Click_1" />
+        <ProgressBar Height="23" HorizontalAlignment="Left" Margin="561,267,0,0" Name="progressBar" VerticalAlignment="Top" Width="77" />
+        <CheckBox IsChecked="{Binding Path=Legacy}"  Content="Leg" Height="16" HorizontalAlignment="Left" Margin="156,266,0,0" Name="legacyCheckbox" VerticalAlignment="Top" />
+        <CheckBox IsChecked="{Binding Path=OnlyActors}"  Content="Act" Height="16" HorizontalAlignment="Left" Margin="156,278,0,0" VerticalAlignment="Top" />
+
+    </Grid>
+</UserControl>

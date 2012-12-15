@@ -1,0 +1,19 @@
+﻿<Window x:Class="KinectRecorder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect Recorder" Height="435" Width="726" xmlns:my="clr-namespace:KinectRecorder">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Margin="12,12,0,0" Name="tabControl1" VerticalAlignment="Top">
+            <TabItem Header="Record" Name="tabItem1">
+                <Grid>
+                    <my:VideoRecorderControl />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Process" Name="tabItem2">
+                <Grid>
+                    <my:ParticleProcessorControl />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

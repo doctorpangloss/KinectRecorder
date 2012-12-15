@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="KinectRecorder.MultiRecorderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" xmlns:my="clr-namespace:KinectRecorder" Height="755" Width="696">
+    <Grid Height="755" Width="696">
+        <my:VideoRecorderControl x:Name="recorder1" HorizontalAlignment="Left" Margin="12,12,0,0" VerticalAlignment="Top" />
+        <my:VideoRecorderControl x:Name="recorder2" HorizontalAlignment="Left" Margin="12,359,0,0" VerticalAlignment="Top" />
+        <Button IsEnabled="{Binding Path=ReadyAndNotRecording}" Content="Record Both" Height="23" HorizontalAlignment="Left" Margin="12,706,0,0" Name="recordButton" VerticalAlignment="Top" Width="75" Click="recordButton_Click" />
+        <Button IsEnabled="{Binding Path=ReadyAndRecording}" Content="Stop Both" Height="23" HorizontalAlignment="Left" Margin="93,706,0,0" Name="stopButton" VerticalAlignment="Top" Width="75" Click="stopButton_Click" />
+    </Grid>
+</UserControl>

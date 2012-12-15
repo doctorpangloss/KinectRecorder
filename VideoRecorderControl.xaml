@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="KinectRecorder.VideoRecorderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             x:Name="This"
+             mc:Ignorable="d" 
+             d:DesignHeight="354" d:DesignWidth="700">
+    <Grid Width="670" Height="341">
+        <Image Name="colorImage" Height="240" HorizontalAlignment="Left" Margin="12,12,0,0" Stretch="Fill" VerticalAlignment="Top" Width="320" />
+        <Canvas Height="240" HorizontalAlignment="Left" Margin="338,12,0,0" Name="skeletonCanvas" VerticalAlignment="Top" Width="320" Background="#00000000">
+            <Image Name="depthImage" Height="240" Stretch="Fill" Width="320" Canvas.Left="0" Canvas.Top="0" />
+        </Canvas>
+        <ToolBarTray Height="62" HorizontalAlignment="Left" Margin="12,258,0,0" Name="toolBarTray1" VerticalAlignment="Top" Width="645">
+            <ToolBar Band="0" BandIndex="0">
+                <Label Content="Quality:"/>
+                <ComboBox Name="qualityCombox" SelectedIndex="0">
+                    <ComboBoxItem Name="SXGAComboxItem">SXGA</ComboBoxItem>
+                    <ComboBoxItem Name="VGAComboxItem">VGA</ComboBoxItem>
+                    <ComboBoxItem Name="QVGAComboxItem">QVGA</ComboBoxItem>
+                </ComboBox>
+                <Label Content="Kinect:"/>
+                <ComboBox Name="kinectCombox" ItemsSource="{Binding Path=KinectConnectionIDs}" />
+                <Button Content="On" Click="onButton_Click" />
+                <Button Content="Off" Click="offButton_Click" />
+                <Button Content="Open Session" Click="OpenSession" IsEnabled="False" />
+                <Button Content="New Session" Click="NewSession" IsEnabled="False" />
+            </ToolBar>
+            <ToolBar Name="recordingBar" IsEnabled="{Binding Path=Ready}" Band="1" BandIndex="0">
+                <Button IsEnabled="{Binding Path=NotRecording}" Name="recordButton" Content="Record" Click="StartRecording" />
+                <Button IsEnabled="{Binding Path=Recording}" Name="stopButton" Content="Stop" Click="StopRecording" />
+                <Button Content="(Change) Directory:" Click="ChooseClipDirectory" />
+                <Label Content="{Binding Path=CurrentDirectory}" />
+                <Label Content="Scene:" />
+                <TextBox IsEnabled="{Binding Path=NotRecording}" Text="{Binding Path=CurrentScene, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" />
+                <Label Content="Note:" />
+                <ComboBox IsEnabled="{Binding Path=NotRecording}" IsEditable="False" ItemsSource="{Binding Path=Actors, Mode=TwoWay}" SelectedItem="{Binding Path=CurrentActor, Mode=OneWayToSource}"/>
+                <TextBox Width="50" IsEnabled="{Binding Path=NotRecording}" Text="{Binding Path=CurrentNote, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" />
+                <Label Content="Take:" />
+                <TextBox IsEnabled="{Binding Path=NotRecording}" Text="{Binding Path=CurrentTake, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" />
+                <Label Content="Frames:" />
+                <Label Content="{Binding Path=CurrentClip.EndFrame}" />
+            </ToolBar>
+        </ToolBarTray>
+
+    </Grid>
+</UserControl>
