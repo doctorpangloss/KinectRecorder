@@ -3,6 +3,11 @@ KinectRecorder
 
 Record Kinect particle data into upscale, high-resolution, full-color and full-motion sequences you can use directly in Autodesk Maya.
 
+Examples
+========
+
+Early, low resolution test work can be watched [here](https://vimeo.com/31375961). Check out [my thesis](https://vimeo.com/42359967) for its use in a full narrative film. The objective is to do something like the dream sequences in *Prometheus*, except without the use of Trapcode Particular.
+
 Run
 ===
 
