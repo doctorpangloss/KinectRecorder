@@ -15,7 +15,7 @@ Run
  1. `git clone http://github.com/doctorpangloss/KinectRecorder.git`
  2. `cd KinectRecorder`
  3. Download and extract http://downloads.sourceforge.net/project/emgucv/emgucv/2.4.2/libemgucv-windows-x64-gpu-2.4.2.1777.zip to the root directory.
- 4. Download and install the [latest Kinect SDK](http://www.microsoft.com/en-us/kinectforwindows/develop/overview.aspx)
+ 4. Download and install the [Kinect SDK v1.8](https://www.microsoft.com/en-us/download/details.aspx?id=40278)
  5. Open the Visual Studio project.
  6. Add MayaCacheIO as your missing reference.
  7. Compile & run.
@@ -47,11 +47,9 @@ Howto Use
 How do you get such high-resolution particles?
 ==============================================
 
-I transform the depth frame into the Skeleton space basis (x_depth, y_depth, depth) => (x',y',z'). I store (x', y', z') skeleton points into a floating-point RGB image. Since (x_depth, y_depth) corresponds to (x_color, y_color), I scale up the depth frame nearest neighbor to match the color frame's resolution. Ain't that clever? I'm really dating myself here.
+I transform the depth frame into the Skeleton space basis (x_depth, y_depth, depth) => (x',y',z'). I store (x', y', z') skeleton points into a floating-point RGB image. Since (x_depth, y_depth) corresponds to (x_color, y_color), I scale up the depth frame nearest neighbor to match the color frame's resolution.
 
 How can I use this in my own work?
 ==================================
 
-This software is GPLv3 licensed with the following amendment: Any products created by this software or derivatives of this software, such as, but not limited to, the converted particle sequences, cannot be used in commercial work without my express prior written permission. Non-commercial work that uses this tool or its derivatives in this way must be Creative Commons NC-BY-SA 3.0 licensed.
-
-In other words, if you use this to make a sequence for a music video, television spot, or film for which you are compensated with money or favors, please get my permission to use the software first. Other purposes, like evaluation, research, creating your own, non-commercial work, just requires that the tool be attributed to me.
+This software is GPLv3 licensed. You retain full rights to the content you produce.
